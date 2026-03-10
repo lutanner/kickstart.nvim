@@ -12,9 +12,13 @@ map('n', '<leader>wq', '<cmd>wq<CR>', opts) -- Save and Quit with leader+wq
 -- Quit
 --[[wk.add {
   { '<leader>q', group = '[Q]uit' },
-}]]--
+}]]
+--
 map('n', '<leader>qq', '<cmd>quit<CR>', opts) -- Quit with leader+pq
 map('n', '<leader>qf', vim.cmd.Ex, { desc = 'quit to file explorer' }) -- Exit file to file explorer with leader+pf
+
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center cursor after half-page down' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center cursor after half-page up' })
 
 -- Kickstart stuff
 --  See `:help vim.keymap.set()`
