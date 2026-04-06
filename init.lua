@@ -370,6 +370,7 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         pyright = {},
+        texlab = {},
         -- rust_analyzer = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -494,12 +495,10 @@ require('lazy').setup({
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function() require('luasnip.loaders.from_vscode').lazy_load() end,
+          },
         },
         opts = {},
       },
@@ -608,7 +607,7 @@ require('lazy').setup({
       require('nvim-treesitter.configs').setup {
         modules = {}, -- <- add
         sync_install = false, -- <- add
-        ignore_install = {}, -- <- add
+        ignore_install = { 'latex' }, -- <- add
 
         ensure_installed = {
           'bash',
@@ -625,7 +624,10 @@ require('lazy').setup({
         },
         auto_install = true,
 
-        highlight = { enable = true },
+        highlight = {
+          enable = true,
+          disable = { 'latex' },
+        },
         indent = { enable = true },
       }
     end,
