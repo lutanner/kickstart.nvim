@@ -4,10 +4,11 @@ return {
   -- tag = "v2.15", -- uncomment to pin to a specific release
   init = function()
     -- Detect operating system
+    vim.g.vimtex_fold_enabled = 1
     local is_mac = vim.fn.has 'macunix' == 1
     -- local is_linux = vim.fn.has 'linux' == 1         -- unused
     -- Set PDF viewer based on OS
-    local viewer = 'zathura' -- default for Linux
+    local viewer = 'zathura' -- default for Linu
     if is_mac then
       viewer = 'skim' -- Use Skim on macOS
     end
