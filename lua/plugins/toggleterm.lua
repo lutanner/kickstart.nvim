@@ -5,9 +5,9 @@ return {
   config = function()
     require('toggleterm').setup {
       size = 15,
-      -- This is the key! Set your open mapping to <leader>tt
-      open_mapping = [[<leader>tt]], -- Space + t + t
+      open_mapping = [[<leader>tt]],
       insert_mappings = false,
+      terminal_mappings = false,
       direction = 'float',
       float_opts = { border = 'curved' },
     }
