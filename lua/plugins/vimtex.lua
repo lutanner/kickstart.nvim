@@ -1,7 +1,6 @@
 return {
   'lervag/vimtex',
-  lazy = false, -- we don't want to lazy load VimTeX
-  -- tag = "v2.15", -- uncomment to pin to a specific release
+  lazy = false,
   init = function()
     -- Detect operating system
     vim.g.vimtex_fold_enabled = 1
@@ -21,10 +20,10 @@ return {
     end
     vim.g.vimtex_compiler_method = 'latexmk'
     vim.g.vimtex_view_automatic = 1
+    vim.g.vimtex_imaps_enabled = 0 --disables vimtex mappings in insert mode
   end,
   keys = {
     { '<leader>lc', '<cmd>VimtexCompile<cr>', desc = 'LaTeX: Compile' },
-    { '<leader>ll', '<cmd>VimtexCompileToggle<cr>', desc = 'LaTeX: Auto Compile toggle' },
     { '<leader>lv', '<cmd>VimtexView<cr>', desc = 'LaTeX: View PDF' },
     { '<leader>lk', '<cmd>VimtexClean<cr>', desc = 'LaTeX: Clean build files' },
     { '<leader>le', '<cmd>VimtexErrors<cr>', desc = 'LaTeX: Show compilation errors' },
