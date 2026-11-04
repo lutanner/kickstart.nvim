@@ -368,6 +368,7 @@ require('lazy').setup({
       --  See `:help lsp-config` for information about keys and how to configure
       local servers = {
         clangd = {},
+        omnisharp = {},
         -- gopls = {},
         pyright = {},
         texlab = {
@@ -476,6 +477,7 @@ require('lazy').setup({
         python = { 'black' },
         cpp = { 'clang-format' },
         c = { 'clang-format' },
+        c_sharp = { 'csharpier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -623,6 +625,7 @@ require('lazy').setup({
           'bash',
           'c',
           'cpp',
+          'c_sharp',
           'cmake',
           'diff',
           'html',
@@ -639,6 +642,9 @@ require('lazy').setup({
         highlight = {
           enable = true,
           disable = { 'latex' },
+        },
+        folding = {
+          enable = true,
         },
         indent = { enable = true },
       }

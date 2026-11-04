@@ -76,3 +76,10 @@ vim.o.confirm = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+
+-- Setup folding
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99 -- start with everything unfolded
+-- vim.opt.foldenable = false  -- alternative: keep folds but start disabled
+vim.opt.foldcolumn = '1' -- optional: show a fold column on the left
